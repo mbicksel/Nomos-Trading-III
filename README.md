@@ -11,8 +11,12 @@
         
         :root { --primary: #00f5ff; }
         
-        body { font-family: 'Inter', system_ui, sans-serif; }
-        .heading-font { font-family: 'Space Grotesk', sans-serif; }
+        body {
+            font-family: 'Inter', system_ui, sans-serif;
+        }
+        .heading-font {
+            font-family: 'Space Grotesk', sans-serif;
+        }
 
         .hero-bg {
             background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
@@ -42,14 +46,16 @@
                         0 0 10px -5px rgb(0 245 255 / 0.3);
         }
 
-        .data-row { transition: all 0.2s ease; }
+        .data-row {
+            transition: all 0.2s ease;
+        }
         .data-row:hover {
             background-color: #1f2937;
             transform: translateX(8px);
         }
 
         .ticker {
-            animation: ticker-slide 30s linear infinite;
+            animation: ticker-slide 35s linear infinite;
         }
         @keyframes ticker-slide {
             0% { transform: translateX(0); }
@@ -58,6 +64,7 @@
     </style>
 </head>
 <body class="bg-black text-white overflow-x-hidden">
+
     <!-- NAVBAR -->
     <nav class="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-xl border-b border-white/10">
         <div class="max-w-screen-2xl mx-auto px-8 py-5 flex items-center justify-between">
@@ -70,28 +77,28 @@
             </div>
             
             <div class="flex items-center gap-10 text-sm font-medium">
-                <a href="#" class="nav-link text-white/80 hover:text-white">STRATEGY</a>
-                <a href="#" class="nav-link text-white/80 hover:text-white">RESEARCH</a>
-                <a href="#" class="nav-link text-white/80 hover:text-white">LIVE SIGNALS</a>
-                <a href="#" class="nav-link text-white/80 hover:text-white">PREDICTION MARKETS</a>
-                <a href="#" class="nav-link text-white/80 hover:text-white">ABOUT</a>
+                <a href="#strategy" class="nav-link text-white/80 hover:text-white">STRATEGY</a>
+                <a href="#research" class="nav-link text-white/80 hover:text-white">RESEARCH</a>
+                <a href="#signals" class="nav-link text-white/80 hover:text-white">LIVE SIGNALS</a>
+                <a href="#markets" class="nav-link text-white/80 hover:text-white">PREDICTION MARKETS</a>
+                <a href="#about" class="nav-link text-white/80 hover:text-white">ABOUT</a>
             </div>
 
             <div class="flex items-center gap-4">
-                <div class="px-6 py-2.5 bg-white/5 hover:bg-white/10 border border-white/20 rounded-2xl text-sm font-medium flex items-center gap-2 transition-all cursor-pointer">
+                <div class="px-6 py-2.5 bg-white/5 border border-white/20 rounded-2xl text-sm font-medium flex items-center gap-2">
                     <i class="fa-solid fa-bolt text-emerald-400"></i>
                     <span class="text-emerald-400 font-mono text-xs">LIVE</span>
                 </div>
                 <button onclick="fakeLogin()" 
                         class="px-8 py-3 bg-white text-black rounded-3xl font-semibold hover:bg-cyan-400 hover:text-black transition-all flex items-center gap-2">
                     <i class="fa-solid fa-arrow-right"></i>
-                    <span>ACCESS PLATFORM</span>
+                    ACCESS PLATFORM
                 </button>
             </div>
         </div>
     </nav>
 
-    <!-- HERO + all other sections (same as before) -->
+    <!-- HERO -->
     <section class="hero-bg min-h-screen flex items-center pt-20">
         <div class="max-w-screen-2xl mx-auto px-8 grid grid-cols-2 gap-16 items-center">
             <div class="space-y-8">
@@ -106,8 +113,7 @@
                 </h1>
                 
                 <p class="text-2xl text-white/70 max-w-lg">
-                    Nomos Trading turns regulatory rulings into quantifiable edge. 
-                    We model administrative decisions and execute across equities &amp; prediction markets.
+                    We track regulatory rulings, model their market impact, and trade equities + prediction markets with precision.
                 </p>
                 
                 <div class="flex items-center gap-6">
@@ -146,8 +152,8 @@
                         <div class="flex items-center gap-3">
                             <i class="fa-solid fa-gavel text-amber-400"></i>
                             <div>
-                                <div class="font-medium">EPA v. Industry</div>
-                                <div class="text-xs text-white/50 font-mono">LIVE RULING FEED</div>
+                                <div class="font-medium">EPA Carbon Rule Update</div>
+                                <div class="text-xs text-white/50 font-mono">LIVE</div>
                             </div>
                         </div>
                         <div class="text-right">
@@ -164,24 +170,70 @@
                             <div class="bg-gradient-to-t from-emerald-400 to-transparent w-8 rounded-t" style="height: 91%"></div>
                             <div class="bg-gradient-to-t from-violet-400 to-transparent w-8 rounded-t" style="height: 77%"></div>
                         </div>
-                        <div class="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-cyan-400 to-transparent"></div>
-                        
-                        <div class="absolute top-8 left-8 bg-black/80 px-4 py-2 rounded-2xl border border-cyan-400/50 text-xs font-mono">
-                            IMPACT MODEL<br>
-                            <span class="text-cyan-400">REG-DELTA: +0.034</span>
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- (The rest of the page - ticker, thesis, performance, footer - is identical to the previous version) -->
-    <!-- For brevity I omitted repeating every section here, but use the full code from my previous response or let me know if you need the complete file again. -->
+    <!-- TICKER -->
+    <div class="bg-zinc-950 border-y border-white/10 py-3 overflow-hidden">
+        <div class="ticker flex items-center gap-12 text-sm font-mono whitespace-nowrap">
+            <span>FTC • DOJ • SEC • EPA • FCC • FERC • CFTC • FDA</span>
+            <span class="text-emerald-400">TSLA +1.8% (EV ruling)</span>
+            <span class="text-rose-400">PFE -0.9% (FDA delay 64%)</span>
+            <span>NVDA +3.1% (CHIPS Act)</span>
+            <span class="text-emerald-400">META +2.4% (FTC update)</span>
+            <span>AMZN Reg Moat: 91</span>
+            <!-- Duplicate for smooth loop -->
+            <span>FTC • DOJ • SEC • EPA • FCC • FERC • CFTC • FDA</span>
+        </div>
+    </div>
+
+    <!-- PERFORMANCE -->
+    <section id="performance" class="py-24 bg-zinc-950">
+        <div class="max-w-screen-2xl mx-auto px-8">
+            <h2 class="heading-font text-5xl font-semibold text-center mb-16">Nomos Alpha Fund I — Live Performance</h2>
+            <div class="grid grid-cols-3 gap-8">
+                <div class="bg-black border border-white/10 rounded-3xl p-8">
+                    <h3 class="font-semibold mb-6">EQUITY BOOK</h3>
+                    <div class="space-y-4 text-sm font-mono">
+                        <div class="flex justify-between"><span>XOM</span><span class="text-emerald-400">+4.2% • +$1.84M</span></div>
+                        <div class="flex justify-between"><span>GOOGL</span><span class="text-emerald-400">+2.9% • +$2.11M</span></div>
+                        <div class="flex justify-between"><span>REGN</span><span class="text-rose-400">-1.1% • -$320K</span></div>
+                    </div>
+                </div>
+                <div class="bg-black border border-white/10 rounded-3xl p-8">
+                    <h3 class="font-semibold mb-6">PREDICTION MARKETS</h3>
+                    <div class="space-y-6">
+                        <div>Will FTC sue Amazon in 2026? <span class="text-emerald-400 font-bold">YES 82%</span></div>
+                    </div>
+                </div>
+                <div class="bg-gradient-to-br from-zinc-900 to-black border border-cyan-400/30 rounded-3xl p-8">
+                    <div class="text-7xl font-mono font-bold text-cyan-400">0.91</div>
+                    <div class="text-white/70">Average Model Confidence</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-black border-t border-white/10 py-20">
+        <div class="max-w-screen-2xl mx-auto px-8 text-center">
+            <div class="heading-font text-6xl mb-6">The future belongs to those who read the rules first.</div>
+            <button onclick="alert('Thank you! This is a demo website for Nomos Trading.')" 
+                    class="mt-8 px-16 py-6 text-xl border border-cyan-400 hover:bg-cyan-400 hover:text-black rounded-3xl transition-all">
+                REQUEST ALLOCATION →
+            </button>
+            <p class="mt-16 text-xs text-white/30 font-mono">
+                NOMOS TRADING LLC — DEMO WEBSITE ONLY
+            </p>
+        </div>
+    </footer>
 
     <script>
         function fakeLogin() {
-            alert("Connecting to Nomos Secure Terminal...\n\nWelcome, Quant. (Demo)");
+            alert("Connecting to Nomos Secure Terminal...\n\nWelcome, Quant. (This is a demo)");
         }
     </script>
 </body>
